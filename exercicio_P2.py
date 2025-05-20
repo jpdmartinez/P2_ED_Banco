@@ -1,11 +1,10 @@
 clientes = {}
 cpfs_cadastrados = set()
 contas_cadastradas = set()
-executando = True
 
 def cadastraCliente():
     nome = input("Nome do Cliente:")
-    cpf = input("CPF do cliente:")
+    cpf = verificaCPF()
 
     if cpf in cpfs_cadastrados:
         print("CPF já cadastrado!")
@@ -20,9 +19,8 @@ def cadastraCliente():
     clientes[cpf] = cliente
     print("Cliente cadastrado com sucesso!")
 
-
 def criarConta():
-    cpf = input("CPF do cliente:")
+    cpf = verificaCPF()
 
     if cpf not in cpfs_cadastrados:
         print("CPF não cadastrado!")
@@ -45,22 +43,36 @@ def criarConta():
         "saldo": 0
     })
     contas_cadastradas.add(numero_conta)
-    print(f"Conta {numero_conta} criada com sucesso para o cliente {clientes[cpf]["nome"]}!")
+    print(f"Conta {numero_conta} criada com sucesso para o cliente {clientes[cpf]["nome"]}!\n")
 
-while(executando):
-    print("------------------MENU------------------------")
-    print("1) Cadastrar cliente")
-    print("2) Criar conta")
-    print("99) Mostrar clientes")
-    print("0) Sair")
-    resposta = int(input("Selecione a operação que deseja realizar:"))
+def verificaCPF():
+    while True:
+        cpf = input("Digite o CPF (somente números): ")
+        if len(cpf) == 11 and cpf.isdigit():
+            return cpf
+        print("CPF inválido! Digite exatamente 11 números.")
 
-    match resposta:
-        case 1: 
-            cadastraCliente()
-        case 2:
-            criarConta()
-        case 99: 
-            for cliente in clientes:
-                print(clientes[cliente])
-        case 0: executando = False
+
+def mostraMenu():
+    executando = True
+    
+    while(executando):
+        print("------------------MENU------------------------")
+        print("1) Cadastrar cliente")
+        print("2) Criar conta")
+        print("99) Mostrar clientes")
+        print("0) Sair")
+        resposta = int(input("Selecione a operação que deseja realizar:"))
+
+        match resposta:
+            case 1: 
+                cadastraCliente()
+            case 2:
+                criarConta()
+            case 99: 
+                for cliente in clientes:
+                    print(clientes[cliente])
+            case 0: executando = False
+
+if __name__ == "__main__":
+    mostraMenu()
