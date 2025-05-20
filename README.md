@@ -128,9 +128,3 @@ Não há bibliotecas externas necessárias; todo o código utiliza apenas a bibl
 ```
 7. Desfazer transação
 ```
-
----
-
-## ✅ Considerações Finais
-
-O sistema demonstra a integração entre estruturas de dados fundamentais e um problema do mundo real (gestão bancária), promovendo aprendizado prático e aplicável. Todas as estruturas exigidas foram utilizadas de forma proposital para reforçar os conceitos teóricos vistos em aula.
