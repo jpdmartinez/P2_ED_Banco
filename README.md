@@ -8,7 +8,7 @@
 
 ## 💡 Descrição Geral
 
-Este é um sistema bancário com interface de linha de comando (CLI), desenvolvido em Python. O sistema permite o cadastro de clientes, criação de contas, operações de saque, depósito, controle de transações e atendimento em fila. Os dados são armazenados e manipulados utilizando diversas estruturas de dados clássicas, conforme os critérios propostos.
+Este é um sistema bancário com interface de linha de comando (CLI), desenvolvido em Python. O sistema permite o cadastro de clientes, criação de contas, operações de saque, depósito, controle de transações e histórico. Os dados são armazenados e manipulados utilizando diversas estruturas de dados clássicas, conforme os critérios propostos.
 
 O objetivo do projeto é demonstrar, na prática, a aplicação de estruturas de dados aprendidas em aula no contexto de um sistema funcional.
 
