@@ -1,8 +1,11 @@
+from historico import LinkedList
+
 class Operacao:
     def __init__(self, numero_conta):
         self.numero_conta = numero_conta
         self.saldo = 0
         self.historico = []
+        self.transacoes = LinkedList()
         
     def depositar(self, valor):
         if valor > 0:
@@ -21,3 +24,6 @@ class Operacao:
             print(f"saque de R$ {valor:.2f} realizado com sucesso.")
         else:
             print("saldo insuficiente ou valor invalido.")
+            
+    def consultar(self):
+        print(f"Saldo atual: R$ {self.saldo:.2f}")
