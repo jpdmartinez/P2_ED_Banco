@@ -1,18 +1,9 @@
-from clientes import clientes
-from contas import criarConta
-from clientes import cadastraCliente
-from Operacao import Operacao
+import Clientes
+import contas
 from historico import mostrar_historico
+from Operacao import Operacao
 
 operacao = Operacao(numero_conta=1) 
-
-def depositar():
-    valor = float(input("Digite o valor para depósito: "))
-    operacao.depositar(valor)
-
-def sacar():
-    valor = float(input("Digite o valor para saque: "))
-    operacao.sacar(valor)
 
 def mostraMenu():
     executando = True
@@ -31,20 +22,20 @@ def mostraMenu():
 
         match resposta:
             case 1: 
-                cadastraCliente()
+                Clientes.cadastraCliente()
             case 2:
-                criarConta()
+                contas.criarConta(primeiraConta=False)
             case 3:
-                depositar()
+                contas.depositar()
             case 4:
-                sacar()
+                contas.sacar()
             case 5:
                 mostrar_historico(operacao)
             case 6:
                 operacao.consultar()
             case 99: 
-                for cliente in clientes:
-                    print(clientes[cliente])
+                for cliente in Clientes.clientes:
+                    print(Clientes.clientes[cliente])
             case 0: executando = False
 
 if __name__ == "__main__":

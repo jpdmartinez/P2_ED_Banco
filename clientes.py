@@ -1,3 +1,5 @@
+import contas
+
 clientes = {}
 cpfs_cadastrados = set()
 
@@ -24,4 +26,7 @@ def cadastraCliente():
         "contas": []
     }
     clientes[cpf] = cliente
+
+    contas.criarConta(primeiraConta=True, cpf=cpf)
+
     print("Cliente cadastrado com sucesso!")
