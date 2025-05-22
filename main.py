@@ -24,11 +24,11 @@ def mostraMenu():
             case 1: 
                 Clientes.cadastraCliente()
             case 2:
-                contas.criarConta(primeiraConta=False)
+                contas.criarConta()
             case 3:
-                contas.depositar()
+                Operacao.depositar(operacao)
             case 4:
-                contas.sacar()
+                Operacao.sacar()
             case 5:
                 mostrar_historico(operacao)
             case 6:

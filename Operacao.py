@@ -1,26 +1,25 @@
-from historico import LinkedList
+from historico import DoublyLinkedList
 
 class Operacao:
     def __init__(self, numero_conta):
         self.numero_conta = numero_conta
         self.saldo = 0
-        self.historico = []
-        self.transacoes = LinkedList()
+        self.transacoes = DoublyLinkedList()
         
-    def depositar(self, valor):
+    def depositar(self):
+        valor = float(input("Digite o valor para depósito: "))
         if valor > 0:
             self.saldo += valor
-            self.historico.append(f"deposito: R$ {valor:.2f}")
-            self.transacoes.push(("deposito", valor))
+            self.transacoes.push("deposito", valor)
             print(f"deposito de R$ {valor:.2f} realizado com sucesso.")
         else:
             print("valor de deposito inválido.")
 
-    def sacar(self, valor):
+    def sacar(self):
+        valor = float(input("Digite o valor para saque: "))
         if 0 < valor <= self.saldo:
             self.saldo -= valor
-            self.historico.append(f"saque: R$ {valor:.2f}")
-            self.transacoes.push(("saque", valor))
+            self.transacoes.push("saque", valor)
             print(f"saque de R$ {valor:.2f} realizado com sucesso.")
         else:
             print("saldo insuficiente ou valor invalido.")
