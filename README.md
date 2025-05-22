@@ -69,7 +69,7 @@ python main.py
 
 ---
 
-## 📚 Estruturas de Dados Utilizadas e Justificativas
+## Estruturas de Dados Utilizadas e Justificativas
 
 ### 1. **Listas**
 
@@ -103,7 +103,7 @@ python main.py
 
 ---
 
-## 🧪 Exemplos de Uso
+## Exemplos de Uso
 
 ### Criar um cliente:
 
