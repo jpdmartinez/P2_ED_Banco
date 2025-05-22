@@ -43,7 +43,7 @@ class Operacao:
             return
 
         valor = float(input("Digite o valor para saque: "))
-        if 0 < valor <= self.saldo:
+        if 0 < valor <= conta['saldo']:
             conta['saldo'] -= valor
             self.transacoes.push("saque", valor)
             print(f"saque de R$ {valor:.2f} realizado com sucesso na conta {conta['numero']} do(a) cliente {Clientes.clientes[cpf]['nome']}")
