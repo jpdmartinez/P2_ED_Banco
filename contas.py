@@ -38,6 +38,9 @@ def criarConta(cpf=None):
     else:
         print("Senha incorreta!")
 
-
-
-    
+def buscar_numero(numero_conta):
+    for cpf, dados in Clientes.clientes.items():
+        for conta in dados['contas']:
+            if conta['numero'] == numero_conta:
+                return conta, cpf
+    return None

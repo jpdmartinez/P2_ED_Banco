@@ -3,10 +3,10 @@ import contas
 from historico import mostrar_historico
 from Operacao import Operacao
 
-operacao = Operacao(numero_conta=1) 
 
 def mostraMenu():
     executando = True
+    operacao = Operacao()
 
     while(executando):
         print("------------------MENU------------------------")
@@ -26,11 +26,11 @@ def mostraMenu():
             case 2:
                 contas.criarConta()
             case 3:
-                Operacao.depositar(operacao)
+                operacao.depositar()
             case 4:
-                Operacao.sacar()
+                operacao.sacar()
             case 5:
-                mostrar_historico(operacao)
+                mostrar_historico()
             case 6:
                 operacao.consultar()
             case 99: 
