@@ -16,6 +16,8 @@ def mostraMenu():
         print("4) Sacar")
         print("5) Mostrar historico")
         print("6) Consultar saldo")
+        print("7) Transferir")
+        print("8) Desfazer última transação")
         print("99) Mostrar clientes")
         print("0) Sair")
         resposta = int(input("Selecione a operação que deseja realizar:"))
@@ -33,6 +35,10 @@ def mostraMenu():
                 mostrar_historico()
             case 6:
                 operacao.consultar()
+            case 7:
+                operacao.transferir()
+            case 8:
+                operacao.desfazer_ultima_transacao()
             case 99: 
                 for cliente in Clientes.clientes:
                     print(Clientes.clientes[cliente])

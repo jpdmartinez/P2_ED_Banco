@@ -5,12 +5,14 @@ contas_cadastradas = set()
 def criarConta(cpf=None):
     if cpf == None:
         cpf = Clientes.verificaCPF()
-        senha = input("Digite sua senha:")
-        verificaSenha = Clientes.verificar_senha(senha, Clientes.clientes[cpf]['senha'])
+        
 
         if cpf not in Clientes.cpfs_cadastrados:
             print("CPF não cadastrado!")
             return
+        
+        senha = input("Digite sua senha:")
+        verificaSenha = Clientes.verificar_senha(senha, Clientes.clientes[cpf]['senha'])
     else:
         cpf = cpf
         verificaSenha = True
