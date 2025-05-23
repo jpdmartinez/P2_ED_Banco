@@ -8,12 +8,19 @@ class Operacao:
         self.transacoes = DoublyLinkedList()
         
     def autenticar_conta(self):
-        numero = int(input("Digite o número da conta:"))
-        conta, cpf = contas.buscar_numero(numero)
+        try:
+            numero = int(input("Digite o número da conta:"))
+        except ValueError:
+            print("Número da conta inválido!")
+            return None
+        
+        resultado = contas.buscar_numero(numero)
 
-        if conta is None:
+        if resultado is None:
             print("Conta não existe")
             return None
+        
+        conta, cpf = resultado
         
         senha = input("Digite sua senha:")
 
@@ -25,9 +32,12 @@ class Operacao:
 
     
     def depositar(self):
-        conta, cpf = self.autenticar_conta()
-        if conta is None:
+        resultado = self.autenticar_conta()
+        if resultado is None:
             return
+        
+        conta, cpf = resultado
+
 
         valor = float(input("Digite o valor para depósito: "))
         if valor > 0:
@@ -38,9 +48,11 @@ class Operacao:
             print("valor de deposito inválido.")
 
     def sacar(self):
-        conta, cpf = self.autenticar_conta()
-        if conta is None:
+        resultado = self.autenticar_conta()
+        if resultado is None:
             return
+        
+        conta, cpf = resultado
 
         valor = float(input("Digite o valor para saque: "))
         if 0 < valor <= conta['saldo']:
@@ -51,8 +63,8 @@ class Operacao:
             print("saldo insuficiente ou valor invalido.")
             
     def consultar(self):
-        conta, _ = self.autenticar_conta()
+        conta, cpf = self.autenticar_conta()
         if conta is None:
             return
 
-        print(f"Saldo atual da conta {conta['numero']}: R$ {conta['saldo']:.2f}")
+        print(f"Saldo atual da conta {conta['numero']} do(a) cliente {Clientes.clientes[cpf]['nome']}: R$ {conta['saldo']:.2f}")
