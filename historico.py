@@ -1,4 +1,5 @@
 from datetime import datetime
+import Clientes
 
 class Node: 
     def __init__(self, data: tuple):
@@ -11,9 +12,9 @@ class DoublyLinkedList:
         self.head = None
         self.tail = None
 
-    def push(self, tipo: str, valor: float):
+    def push(self, tipo: str, valor: float, numero_conta: int):
         data_hora = datetime.now().strftime("%d/%m/%Y %H:%M")
-        tupla = (tipo, valor, data_hora)
+        tupla = (tipo, valor, data_hora, numero_conta)
         novo_no = Node(tupla)  
         
         if self.head is None:
@@ -25,11 +26,16 @@ class DoublyLinkedList:
 
     def listar(self):
         atual = self.head
-        print("Histórico de transações:")
+        print(f"Histórico de transações:")
         while atual:
-            tipo, valor, data = atual.data
-            print(f"{data} - {tipo}: R$ {valor:.2f}")
+            tipo, valor, data, numero_conta = atual.data
+            print(f"{data} - Conta {numero_conta} -{tipo}: R$ {valor:.2f}")
             atual = atual.next
     
-def mostrar_historico(operacao):
-    operacao.transacoes.listar()
+def mostrar_historico():
+    cpf = Clientes.verificaCPF()
+    if cpf not in Clientes.clientes:
+        print("Cliente não encontrado!")
+        return
+    historico = Clientes.clientes[cpf]['historico']
+    historico.listar()

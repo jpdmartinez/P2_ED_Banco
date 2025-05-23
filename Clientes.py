@@ -1,3 +1,4 @@
+from historico import DoublyLinkedList
 import bcrypt
 import contas
 
@@ -28,7 +29,8 @@ def cadastraCliente():
         "nome": nome,
         "cpf": cpf,
         "senha": senha,
-        "contas": []
+        "contas": [],
+        "historico": DoublyLinkedList()
     }
     clientes[cpf] = cliente
 

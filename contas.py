@@ -1,5 +1,4 @@
 import Clientes
-import Operacao
 
 contas_cadastradas = set()
 

@@ -1,12 +1,9 @@
-from historico import DoublyLinkedList
-import Clientes 
 import contas
+import Clientes
 
 
 class Operacao:
-    def __init__(self):
-        self.transacoes = DoublyLinkedList()
-        
+
     def autenticar_conta(self):
         try:
             numero = int(input("Digite o número da conta:"))
@@ -38,11 +35,11 @@ class Operacao:
         
         conta, cpf = resultado
 
-
         valor = float(input("Digite o valor para depósito: "))
         if valor > 0:
             conta['saldo'] += valor
-            self.transacoes.push("deposito", valor)
+
+            Clientes.clientes[cpf]['historico'].push("Depósito", valor, conta['numero'])
             print(f"deposito de R$ {valor:.2f} realizado com sucesso na conta {conta['numero']} do(a) cliente {Clientes.clientes[cpf]['nome']}.")
         else:
             print("valor de deposito inválido.")
@@ -51,20 +48,22 @@ class Operacao:
         resultado = self.autenticar_conta()
         if resultado is None:
             return
-        
         conta, cpf = resultado
 
         valor = float(input("Digite o valor para saque: "))
         if 0 < valor <= conta['saldo']:
             conta['saldo'] -= valor
-            self.transacoes.push("saque", valor)
+
+            Clientes.clientes[cpf]['historico'].push("Saque", valor, conta['numero'])
             print(f"saque de R$ {valor:.2f} realizado com sucesso na conta {conta['numero']} do(a) cliente {Clientes.clientes[cpf]['nome']}")
         else:
             print("saldo insuficiente ou valor invalido.")
             
     def consultar(self):
-        conta, cpf = self.autenticar_conta()
-        if conta is None:
+        resultado = self.autenticar_conta()
+        if resultado is None:
             return
+        
+        conta, cpf = resultado
 
         print(f"Saldo atual da conta {conta['numero']} do(a) cliente {Clientes.clientes[cpf]['nome']}: R$ {conta['saldo']:.2f}")
