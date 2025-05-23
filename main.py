@@ -1,12 +1,12 @@
 import Clientes
 import contas
 from historico import mostrar_historico
-from Operacao import Operacao
+import operacao
 
 
 def mostraMenu():
     executando = True
-    operacao = Operacao()
+    
 
     while(executando):
         print("------------------MENU------------------------")
