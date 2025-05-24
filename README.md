@@ -1,8 +1,10 @@
 # Sistema Bancário CLI - Python
 
 **Integrantes do Grupo:**
-
+* Italo Ricci (RA: )
+* João Pedro Belarmino Torres (RA: 2007848)
 * João Pedro Duarte Martinez (RA: 1993686)
+* Jose Henrique Ribeiro dos Santos (RA: 1994042)
 
 ---
 
@@ -106,41 +108,9 @@ python main.py
 
 ## Exemplos de Uso
 
-### Criar um cliente:
+### Cadastrar um cliente:
+![image](https://github.com/user-attachments/assets/81bd12e3-86cd-47c8-9505-980be5c80fe6)
 
-```
-1. Cadastrar cliente
-2. Informar nome: Gustavo Mattos
-3. CPF: 12345678910
-4: Senha: 12345
-5: Escolher tipo de conta: 1 - Corrente
-```
+### Realizar Depósito
 
-### Cadastrar nova conta:
-
-```
-1: Criar conta
-2: Informar CPF já cadastrado
-3: Informar senha do cliente
-4: Escolher tipo de conta: 2 - Poupança
-```
-
-### Realizar transações:
-
-```
-3. Depositar
-4. Sacar
-```
-
-### Ver informações:
-
-```
-5. Ver saldo
-6. Ver histórico de transações
-```
-
-### Cancelar última operação:
-
-```
-7. Desfazer transação
-```
+![image](https://github.com/user-attachments/assets/8fea0ff7-e6c8-4eb1-837e-a5d16296f6c9)
