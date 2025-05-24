@@ -45,61 +45,60 @@ python main.py
 
 ## Funcionalidades do Sistema
 
-### 1. Cadastro de clientes
+### Área do cliente
 
-* Para realizar o cadastro, informar: nome do cliente, CPF, senha da conta.
-* Relacionamento com múltiplas contas bancárias, ou seja, um cliente pode ter mais de uma conta.
+* Cadastro de clientes com o nome, CPF e senha;
+* Login com CPF e senha  para ter acesso às operações;
+* Criação de múltiplas contas bancárias por cliente;
+* Visualização de dados do cliente e de todas as suas contas cadastradas.
 
-### 2. Criação de contas bancárias
+### Operações bancárias
+* Depósito em conta com atualização de saldo;
+* Saque em conta com verificação de saldo;
+* Transferência entre contas do mesmo ou entre clientes diferentes;
+* Visualização do saldo em conta.
 
-* Geração automática de número de conta
-* Conta associada a um cliente já cadastrado
-* Verifcação se o CPF já possúi cadastro, caso não é possível criar a conta
-* Caso a senha informada esteja errada, não é possível criar a conta
+### Histórico e gerenciamento
+* Registro detalhado de transações com tipo, valor, data/hora e conta envolvida;
+* Visualização do histórico de transações com todas as movimentações realizadas;
+* Desfazer a última transação (apenas a mais recente), restaurando os saldos anteriores.
 
-### 3. Operações bancárias
 
-* Depósito e saque com atualização de saldo
-* Transação entre contas
-* Desfazer da última transação
-
-### 4. Histórico de transações
-
-* Cada conta possui seu próprio histórico usando lista encadeada
 
 ---
 
-## Estruturas de Dados Utilizadas e Justificativas
+## Estruturas de Dados Utilizadas
 
 ### 1. **Listas**
 
 * Utilizadas para armazenar a lista geral de clientes e contas.
-* Justificativa: Estrutura simples e eficiente para acesso sequencial e armazenamento dinâmico.
+* Estrutura simples e eficiente para acesso sequencial e armazenamento dinâmico.
 
 ### 2. **Pilha (com lista)**
 
 * Utilizada para registrar as transações recentes e permitir desfazer a última.
-* Justificativa: Ideal para controle de operações reversíveis (último a entrar, primeiro a sair - LIFO).
+* Utilizada para exibir o histórico de transações
+* Ideal para controle de operações reversíveis (último a entrar, primeiro a sair - LIFO).
 
 ### 3. **Tuplas**
 
-* Armazenamento de transações como (número da conta, tipo, valor).
+* Foram utilizadas para armazenar os dados imutáveis das transações, como número da conta, tipo e valor.
 * Justificativa: Estrutura imutável e leve, ideal para agrupamento simples de dados.
 
 ### 4. **Sets (conjuntos)**
 
 * Utilizados para garantir unicidade de CPFs cadastrados.
-* Justificativa: Operações de verificação de existência são rápidas (O(1)).
+* Operações de verificação de existência são rápidas (O(1)).
 
 ### 5. **Dicionários**
 
 * Mapeamento de CPF → Cliente e Conta → Dados da conta.
-* Justificativa: Acesso rápido e direto aos dados usando chaves únicas.
+* Acesso rápido e direto aos dados usando chaves únicas.
 
-### 6. **Lista Encadeada**
+### 6. **Lista duplamente encadeada**
 
 * Cada conta possui uma lista encadeada de transações.
-* Justificativa: Permite inserção eficiente no início, sem necessidade de realocação de memória.
+* Utilizada para mostrar o histórico de transações.
 
 ---
 
