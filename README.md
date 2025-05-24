@@ -40,6 +40,10 @@ cd caminho/do/arquivo
 ```bash
 python main.py
 ```
+---
+## Fluxograma do sistema 
+![fluxograma_P2_estrutura2 drawio](https://github.com/user-attachments/assets/9c87917c-0ac0-49d7-83ee-07a9f63e233b)
+
 
 ---
 
@@ -62,9 +66,7 @@ python main.py
 * Registro detalhado de transações com tipo, valor, data/hora e conta envolvida;
 * Visualização do histórico de transações com todas as movimentações realizadas;
 * Desfazer a última transação (apenas a mais recente), restaurando os saldos anteriores.
-
-
-
+  
 ---
 
 ## Estruturas de Dados Utilizadas
