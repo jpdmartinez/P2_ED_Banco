@@ -1,7 +1,7 @@
 # Sistema Bancário CLI - Python
 
 **Integrantes do Grupo:**
-* Italo Ricci (RA: )
+* Italo Ricci (RA: 1993169)
 * João Pedro Belarmino Torres (RA: 2007848)
 * João Pedro Duarte Martinez (RA: 1993686)
 * Jose Henrique Ribeiro dos Santos (RA: 1994042)
