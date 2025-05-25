@@ -1,12 +1,12 @@
 import Clientes
 import contas
 from historico import mostrar_historico
-from Operacao import Operacao
+import operacao
 
-operacao = Operacao(numero_conta=1) 
 
 def mostraMenu():
     executando = True
+    
 
     while(executando):
         print("------------------MENU------------------------")
@@ -16,6 +16,8 @@ def mostraMenu():
         print("4) Sacar")
         print("5) Mostrar historico")
         print("6) Consultar saldo")
+        print("7) Transferir")
+        print("8) Desfazer última transação")
         print("99) Mostrar clientes")
         print("0) Sair")
         resposta = int(input("Selecione a operação que deseja realizar:"))
@@ -26,13 +28,17 @@ def mostraMenu():
             case 2:
                 contas.criarConta()
             case 3:
-                Operacao.depositar(operacao)
+                operacao.depositar()
             case 4:
-                Operacao.sacar()
+                operacao.sacar()
             case 5:
-                mostrar_historico(operacao)
+                mostrar_historico()
             case 6:
                 operacao.consultar()
+            case 7:
+                operacao.transferir()
+            case 8:
+                operacao.desfazer_ultima_transacao()
             case 99: 
                 for cliente in Clientes.clientes:
                     print(Clientes.clientes[cliente])

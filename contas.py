@@ -1,17 +1,18 @@
 import Clientes
-import Operacao
 
 contas_cadastradas = set()
 
 def criarConta(cpf=None):
     if cpf == None:
         cpf = Clientes.verificaCPF()
-        senha = input("Digite sua senha:")
-        verificaSenha = Clientes.verificar_senha(senha, Clientes.clientes[cpf]['senha'])
+        
 
         if cpf not in Clientes.cpfs_cadastrados:
             print("CPF não cadastrado!")
             return
+        
+        senha = input("Digite sua senha:")
+        verificaSenha = Clientes.verificar_senha(senha, Clientes.clientes[cpf]['senha'])
     else:
         cpf = cpf
         verificaSenha = True
@@ -38,6 +39,9 @@ def criarConta(cpf=None):
     else:
         print("Senha incorreta!")
 
-
-
-    
+def buscar_numero(numero_conta):
+    for cpf, dados in Clientes.clientes.items():
+        for conta in dados['contas']:
+            if conta['numero'] == numero_conta:
+                return conta, cpf
+    return None
