@@ -86,7 +86,6 @@ python main.py
 
 ### 3. **Pilha (com lista)**
 * Utilizada para registrar as transações recentes e permitir desfazer a última.
-* Utilizada para exibir o histórico de transações
 * Ideal para controle de operações reversíveis (último a entrar, primeiro a sair - LIFO).
 
 ### 4. **Tuplas**
