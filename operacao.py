@@ -159,8 +159,8 @@ def desfazer_ultima_transacao():
         
     # Desfaz uma transferência recebida        
     elif "Transferência recebida de" in tipo:
-        numero_conta_origem, cpf_origem = int(tipo.split("Conta")[1].split("-")[0].strip())
-        conta_origem = contas.buscar_numero(numero_conta_origem)
+        numero_conta_origem= int(tipo.split("Conta")[1].split("-")[0].strip())
+        conta_origem, cpf_origem  = contas.buscar_numero(numero_conta_origem)
         
         # Retira o valor recebido e devolve pra conta de origem
         conta['saldo'] -= valor
