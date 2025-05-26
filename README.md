@@ -78,28 +78,32 @@ python main.py
 * Utilizadas para armazenar a lista geral de clientes e contas.
 * Estrutura simples e eficiente para acesso sequencial e armazenamento dinâmico.
 
-### 2. **Pilha (com lista)**
+### 2. **Fila (com lista)**
 
+* Utilizada para armazenar e processar transações na ordem em que ocorreram.
+* Ideal para exibir o histórico de transações na ordem cronológica (primeiro a entrar, primeiro a sair — FIFO).
+* Boa para controle de processos sequenciais, onde a ordem de chegada deve ser respeitada.
+
+### 3. **Pilha (com lista)**
 * Utilizada para registrar as transações recentes e permitir desfazer a última.
-* Utilizada para exibir o histórico de transações
 * Ideal para controle de operações reversíveis (último a entrar, primeiro a sair - LIFO).
 
-### 3. **Tuplas**
+### 4. **Tuplas**
 
 * Foram utilizadas para armazenar os dados imutáveis das transações, como número da conta, tipo e valor.
 * Justificativa: Estrutura imutável e leve, ideal para agrupamento simples de dados.
 
-### 4. **Sets (conjuntos)**
+### 5. **Sets (conjuntos)**
 
 * Utilizados para garantir unicidade de CPFs cadastrados.
 * Operações de verificação de existência são rápidas (O(1)).
 
-### 5. **Dicionários**
+### 6. **Dicionários**
 
 * Mapeamento de CPF → Cliente e Conta → Dados da conta.
 * Acesso rápido e direto aos dados usando chaves únicas.
 
-### 6. **Lista duplamente encadeada**
+### 7. **Lista duplamente encadeada**
 
 * Cada conta possui uma lista encadeada de transações.
 * Utilizada para mostrar o histórico de transações.
